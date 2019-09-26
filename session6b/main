@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+
+void imprimir_tabla(int n,string codigos[],string nombre[],int edad[],char sexo[]);
+int main() {
+   int n=0;
+   cout<<"Ingrese la cantidad de alumnos"<<endl;
+   cin>>n;
+
+   string *codigos=new string[n];
+   string *nombre=new string[n];
+   int *edad=new int[n];
+   char *sexo=new char[n];
+
+   for (int i=0;i<n;i++){
+       cin>>codigos[i];
+       cin>>nombre[i];
+       cin>>edad[i];
+       cin>>sexo[i];
+   }
+   imprimir_tabla(n,codigos,nombre,edad,sexo);
+
+    return 0;
+}
+
+void imprimir_tabla(int n,string codigos[],string nombre[],int edad[],char sexo[]){
+
+    for (int i = 0; i < n; ++i) {
+        cout<<codigos[i]<<"\n";
+        cout<<nombre[i]<<"\n";
+        cout<<edad[i]<<"\n";
+        cout<<sexo[i]<<"\n";
+    }
+
+}

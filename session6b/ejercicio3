@@ -1,0 +1,43 @@
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int calcular_promedio(int n,int notas[]);
+int calcular_mayor(int n,int notas[]);
+
+int main() {
+    int n = 0;
+    do {
+        cout << "Ingrese cantidad de alumnos";
+        cin >> n;
+    } while (n >= 15);
+
+    int *notas=new int[n];
+    for(int i=0;i<n;i++){
+        notas[i]=rand()%21;
+    }
+    int prom=calcular_promedio(n,notas);
+    cout<<"El promedio es:"<<prom<<endl;
+    cout<<"Nota Mayor: "<<calcular_mayor(n,notas);
+
+    delete []notas;
+    notas=nullptr;
+    return 0;
+}
+int calcular_promedio(int n,int notas[]){
+    int suma=0;
+    for(int i=0;i<n;i++){
+        suma=suma+notas[i];
+    }
+    return suma/n;
+}
+
+int calcular_mayor(int n,int notas[]){
+    int mayor=0;
+    for(int i=0;i<n;i++){
+        if(notas[i]>mayor);
+        mayor=notas[i];
+    }
+    return mayor;
+}

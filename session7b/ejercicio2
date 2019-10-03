@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#icnlude <vector>
 using namespace std;
 
 

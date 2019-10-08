@@ -1,0 +1,37 @@
+#include <iostream>
+#include <ctime>
+
+
+using namespace std;
+int calcmayor(int valores[],int tamaño);
+int calcmenor(int valores[],int tamaño);
+int main() {
+  int tamaño=0;
+  cin>>tamaño;
+
+  int *valores =nullptr;
+  valores=new int[tamaño];
+  for(int i=0;i<=tamaño;i++){
+    cin>>valores[i];
+  }
+cout<<calcmayor(valores,tamaño)<<" "<<calcmenor(valores,tamaño)<<endl;
+return 0;
+
+}
+int calcmayor(int valores[],int tamaño){
+int mayor=0;
+for(int i=0;i<tamaño;i++){
+  if(valores[i]>mayor){
+    mayor=valores[i];}
+}
+return mayor;
+}
+
+int calcmenor(int valores[],int tamaño){
+int menor=0;
+for(int i=0;i<tamaño;i++){
+  if(valores[i]<menor){
+    menor=valores[i];}
+}
+return menor;
+}

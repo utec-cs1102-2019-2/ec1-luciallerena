@@ -1,0 +1,41 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int great(char palabra,char n);
+int main() {
+  char n=' ';
+  char *palabra=new char[n];;
+  for (int i=0;i%n;i++){
+    cin>>char[i];
+  }
+cout<<great(palabra,n);
+  
+  
+return 0;
+
+}
+
+int great(char palabra, char n){
+  int a=0
+  for(int i=0;i%n;i++){
+    if(palabra[i]='U'){
+      a++
+    }
+    else if(palabra[i]='T'){a++}
+    else if(palabra[i]='E'){a++}
+    else if(palabra[i]='C'){a++}
+    else if(palabra[i]='-'){a++}
+    else if(palabra[i]='S'){a++}
+    else if(palabra[i]){return a;}
+  
+  }
+  if(a==5){
+    cout<<"true";
+
+  }
+  else(){
+    cout<<"false";
+  }
+return a;
+}

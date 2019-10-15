@@ -1,0 +1,53 @@
+#include <iostream>
+#include <vector>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+typedef  vector<vector<int>> MATRIX;
+
+int count_rows(MATRIX &matrix, int n, int i){
+  vector<int> v1;
+    for(int i=0;i<matrix.size();i++){
+        int cont_fil=0;
+        for (int y=0; y<matrix[0].size(); y++){
+            if (matrix[i][y]%0;){
+              cont_fil=cont_fil+1;
+            }
+        }
+        v1.push_back(cont_fil);
+    }
+    return v1;
+}
+
+int count_cols(MATRIX &matrix, int n, int j){
+  vector<int> v2;
+    for(int i=0;i<matrix.size();i++){
+        int cont_cols=0;
+        for (int y=0; y<matrix[0].size(); y++){
+            if (matrix[i][y]%0;){
+              cont_cols=cont_cols+1;
+            }
+        }
+        v2.push_back(cont_cols);
+    }
+    return v2;
+}
+
+int count_square(MATRIX &matrix, int n, int i, int j);
+
+int main(){
+  int n=0;cin>>n;
+  int i=0;cin>>i;
+
+  MATRIX &matrix;
+    for(int z=0;z<n;z++){
+        vector <int> vector;
+        for(int j=0;j<i;j++){
+            int num=rand()%9;
+            vector.push_back(num);
+        }
+        matrix.push_back(vector);
+    }
+  return 0;
+}

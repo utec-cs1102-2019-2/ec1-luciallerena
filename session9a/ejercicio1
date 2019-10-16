@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+class Triangulo{
+private:
+    int L;
+    int L2;
+    int L3;
+public:
+    Triangulo(int L,  int L2, int L3);
+    float area();
+    float perimetro();
+};
+Triangulo::Triangulo(int L,int L2, int L3){
+    this->L=L;
+    this->L2=L2;
+    this->L3=L3;
+}
+float Triangulo::perimetro(){
+    return this ->L+this->L2+this->L3;
+}
+float Triangulo::area(){
+    float s=this->perimetro()/2;
+    return (sqrt(s*(s-L)*(s-L2)*(s-L3)));
+}
+
+
+class cilindro {
+private:
+    float radio;
+    float h;
+public:
+    cilindro(float radio, float h);
+    float vol();
+    float Atotal();
+    float Alat();
+    ~cilindro();
+};
+cilindro::cilindro(float radio, float h){
+    this->h=h;
+    this->radio=radio;
+}
+float cilindro::vol(){
+    return 3.14*(radio*radio)*h;
+}
+float cilindro::Atotal(){
+    float area_base =2*3.14*(radio*radio);
+    float area_lat=2*3.14*radio*h;
+    return area_base+area_lat;
+}
+float cilindro::Alat(){
+    return 2*3.14*h*radio;
+}
+cilindro::~cilindro(){
+}
+
+
+int main() {
+    int L,L2,L3;
+    cin>>L;cin>>L2;cin>>L3;
+    Triangulo *t=new Triangulo(L,L2,L3);
+    cout<<t->area();
+    int radio, h;
+    cin>>radio;cin>>h;
+    cilindro *a=new cilindro(radio,h);
+    cout<<a->vol()<<"\t";
+    cout<<a->Atotal();
+    return 0;
+}

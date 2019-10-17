@@ -1,0 +1,21 @@
+#include <iostream>
+#include "Alumno.h"
+using namespace std;
+
+int main(){
+    Alumno *venero=new Alumno();
+    Alumno *alvaro=new Alumno();
+    venero->setNombre("Sergio");
+    venero->setApellidos("venero");
+    venero->setCreditos(21);
+    venero->setEdad(17);
+    alvaro->setNombre("alvaro");
+    alvaro->setApellidos("Garcia");
+    alvaro->setCreditos(20);
+    alvaro->setEdad(18);
+
+    venero->print();
+    alvaro->print();
+
+    return 0;
+}

@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+class Carro{
+private:
+    string Marca;
+    string color;
+    int Puertas;
+    string Tipo_carro;
+public:
+    void setMarca(string Marca);
+    string getMarca();
+    void setcolor(string color);
+    string getcolor();
+    void setPuertas(int Puertas);
+    int getPuertas();
+    void setTipo_carro(string Tipo_carro);
+    int getTipo_carro();
+    void print();
+
+};
+void Carro::setMarca(string Marca){
+    this->Marca=Marca;
+}
+string Carro::getMarca(){
+    return this->Marca;
+}
+void Carro::setcolor(string color){
+    this->color=color;
+}
+string Carro::getcolor(){
+    return this->color;
+}
+void Carro::setPuertas(int Puertas){
+    this->Puertas=Puertas;
+}
+int Carro::getPuertas(){
+    return this->Puertas;
+}
+void Carro::setTipo_carro(string Tipo_carro){
+    this->Tipo_carro=Tipo_carro;
+}
+string Carro::getTipo_carro(){
+    return this->Tipo_carro;
+}
+void Carro::print(){
+    cout<<"Marca: "<<this->getMarca()<<"\t";
+    cout<<"Color: "<<this->getcolor()<<"\t";
+    cout<<"Cantidad de puertas: "<<this->getPuertas()<<"\t";
+    cout<<"Tipo de auto: "<<this->getTipo_carro()<<endl;
+}
+int main(){
+  string a,b,c;int d;
+  cout<<"Ingrese marca del carro: ";cin>>a;
+  cout<<"Ingrese el color: ";cin>>b;
+  cout<<"¿Tiene 2 o 4 puertas? ";cin>>d;
+  cout<<"Ingrese tipo de carro ";cin>>c;
+    Carro *c1=new Carro();
+    c1->setMarca(a);
+    c1->setcolor(b);
+    c1->setTipo_carro(c);
+    c1->setPuertas(d);
+    
+
+    c1->print();
+    return 0;
+} 

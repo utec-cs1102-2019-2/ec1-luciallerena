@@ -1,0 +1,53 @@
+//
+// persona.h
+//
+
+
+#ifndef SESSION10B_PERSONA_H
+#define SESSION10B_PERSONA_H
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Persona{
+private:
+    string nombre;
+    int Edad;
+    string DNI;
+    string Nacionalidad;
+public:
+    string getNombre();
+    Persona(string nombre,int Edad,string DNI,string Nacionalidad);
+    void mostrarPersona();
+
+};
+
+
+#endif //SESSION10B_PERSONA_H
+//
+// Persona.cpp
+//
+#include "Persona.h"
+#include "Alumno.h"
+#include <iostream>
+#include <vector>
+using namespace std;
+string Persona::getNombre() {
+    return this->nombre;
+
+}
+Persona::Persona(string nombre,int Edad,string DNI,string Nacionalidad){
+    this->nombre=nombre;
+    this->Edad=Edad;
+    this->DNI=DNI;
+    this->Nacionalidad=Nacionalidad;
+}
+
+
+void Persona::mostrarPersona(){
+    cout<<"----------PERSONA----------"<<endl;
+    cout<<"Nombre: "<<this->nombre<<endl;
+    cout<<"Edad: "<<this->Edad<<endl;
+    cout<<"DNI "<<this->DNI<<endl;
+    cout<<"Nacionalidad: "<<this->Nacionalidad<<endl;
+}

@@ -1,0 +1,13 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+#include "Persona.h"
+
+#include "Alumno.h"
+int main() {
+    Persona *juan = new Persona("Juanito",18,"123123123","Persuano");
+    juan->mostrarPersona();
+    Persona *alvaro = new Alumno("Alvaro",18,"454545","Peruano","20194378");
+    alvaro->mostrarAlumno();
+    return 0;
+}

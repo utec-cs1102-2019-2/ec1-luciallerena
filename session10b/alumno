@@ -1,0 +1,34 @@
+//
+//Alumno.h
+//
+
+#ifndef SESSION10B_ALUMNO_H
+#define SESSION10B_ALUMNO_H
+#include "Persona.h"
+
+class Alumno:public Persona{
+private:
+    string codigo;
+public:
+    Alumno(string nombre,int Edad,string DNI, string  Nacionalidad,string codigo);
+    void mostrarAlumno();
+};
+
+
+#endif //SESSION10B_ALUMNO_H
+
+//Alumno.cpp
+//
+// Created by lucia.llerena on 24/10/2019.
+//
+#include "Alumno.h"
+#include "Persona.h"
+using namespace std;
+#include <iostream>
+Alumno::Alumno(string nombre,int Edad,string DNI, string  Nacionalidad,string codigo):Persona(nombre,Edad,DNI,Nacionalidad){
+    this->codigo=codigo;
+}
+void Alumno::mostrarAlumno(){
+    this->mostrarPersona();
+    cout<<"Cod: "<<this->codigo<<endl;
+};

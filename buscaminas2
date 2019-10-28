@@ -79,8 +79,9 @@ int main() {
             m[f][c]=matrix[f][c];
             for (size_t i = 0;i < fil; i++){
                 for (size_t j = 0; j<col; j++) {
-                    cout<<m[i][j]<<"\t";
-                }
+                    if(matrix[f][c]==m[i][j]){
+                      cout<<" "<<matrix[i][j];}
+                    else{cout<<m[i][j]<<"\t";}}
                 cout<<endl;
             }cout<<endl;
         }

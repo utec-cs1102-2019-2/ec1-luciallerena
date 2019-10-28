@@ -1,36 +1,50 @@
 #include <iostream>
-
+#include <ctime>
+#include <cstdlib>
 using namespace std;
-
 int main(){
-  int fil=10;
-  int col=10;
-  int **matrix = nullptr;
-  matrix = new int *[fil];
+    srand(time(NULL));
+    int fil=5;
+    int col=5;
+    bool fin=0;
+    int **matrix = nullptr;
+    matrix = new int *[fil];
     for (int i = 0; i < fil; i++) {
-      matrix[i] = new int[col];
-      for (int j = 0; j < col; j++) {
-          matrix[i][j]=rand()%(2-0) + (i * 100) + (j * 10);
+        matrix[i] = new int[col];
+        for (int j = 0; j < col; j++) {
+            matrix[i][j]=rand()%3;
         }
     }
-   char **m=nullptr;
-   m=new char *[fil];
-   for (char i = 0;i < fil; i++) {
-     m[i]=new char[col];
-        for (char j = 0; j < col; j++) {
-            m[i][j]="-";
-            int n=0;
-            cout<<"Ingrese posicion";
-            cin>>n;
-            while(n%0){
-              cout << m[i][j] << "\t";
-            }
-            cout<<endl;
+
+    int **m=nullptr;
+    m = new int *[fil];
+    for (int i = 0;i < fil; i++) {
+        m[i] = new int[col];
+        for (int j = 0; j < col; j++) {
+            cout<<" # ";
         }cout<<endl;
-   }
-   
-    else(){
-      cout<<"Perdio"
     }
-  return 0;
+  
+    while(fin==false){
+      int f=0;
+      int c=0;
+      cout<<"Ingrese posición fila";
+      cin>>f;
+      cout<<"Ingrese posición columna";
+      cin>>c;
+      if(matrix[f][c]==1||matrix[f][c]==2) {
+           for (int i = 0;i < fil; i++){
+             for (int j = 0; j<col; j++) {
+               cout<<" "<<matrix[i][j];}
+        cout<<endl;
+        }cout<<endl;
+        }
+      else if (matrix[f][c]%2== 0) {
+            cout<<"*";
+            fin=true;
+       
+        }
+    }
+      
+    return 0;
 }

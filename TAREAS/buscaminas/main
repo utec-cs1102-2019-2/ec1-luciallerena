@@ -1,0 +1,107 @@
+#include <iostream>
+#include <time.h>
+#include <vector>
+#include <stdlib.h>
+#include <stdio.h>
+using namespace std;
+typedef int entero;
+typedef char caracter;
+typedef float decimal;
+
+int main() {
+    entero fil;
+    entero col;
+    entero a;
+    entero b;
+    entero f, c;
+    bool fin = false;
+    cout << "Digite el número de filas: ";
+    cin >> fil;
+    cout << "Digite el número de columnas: ";
+    cin >> col;
+    cout << "\n";
+
+    //Crea la matriz
+    entero **matrix = nullptr;
+    matrix = new int *[fil];
+    for (size_t i = 0; i < fil; i++) {
+        matrix[i] = new entero[col];
+    }
+
+    //Crea la matriz de #
+    entero **m = nullptr;
+    m = new entero *[fil];
+    for (size_t i = 0; i < fil; i++) {
+        m[i] = new entero[col];
+        for (size_t j = 0; j < col; j++) {
+            cout<<"#"<<"\t";
+        }
+        cout << endl;
+    }
+    //Crea el borde
+/*
+    for (size_t i = 0; i < fil; i++) {
+        matrix[0][i] = 9;
+        matrix[i][0] = 9;
+        matrix[i][col - 1] = 9;
+        matrix[fil - 1][i] = 9;
+    }
+*/
+    //Crea minas aleatorias
+    for (size_t i = 0; i < 9; i++) {
+        a =  rand() % (fil);
+        b =  rand() % (col);
+        matrix[a][b] = 8;
+    }
+    
+    //Mostrar tablero
+    /* for(size_t i=0; i<fil; i++){
+         for(size_t j=0; j<col; j++){
+             if(matrix[i][j] == 8){
+                 cout<<"*\t";
+             }
+             else if(matrix[i][j] == 9){
+                 cout<<"#\t";
+             }
+             else{
+                 cout<<" \t";
+             }
+         }
+         cout<<endl;
+     }
+ */
+    while (fin == false) {
+        cout << "Digite la fila: ";
+        cin >> f;
+        cout << "Digite la columna: ";
+        cin >> c;
+        cout<<endl;
+        if(matrix[f][c]!=8) {
+            m[f][c]=rand()%3;
+            for (size_t i = 0;i < fil; i++){
+                for (size_t j = 0; j<col; j++) {
+                    if(matrix[f][c]==m[i][j]){
+                      cout<<"#\t";}
+                    else{cout<<m[i][j]<<"\t";}}
+                cout<<endl;
+            }cout<<endl;
+        }
+        else {
+            cout << "Perdiste, has tocado una mina." << endl;
+            for (size_t i = 0; i < fil; i++) {
+                for (size_t j = 0; j < col; j++) {
+                    if (matrix[i][j] == 8) {
+                        cout << "*\t";
+                    } else if (matrix[i][j] == 9) {
+                        cout << "#\t";
+                    } else {
+                        cout << " \t";
+                    }
+                }
+                cout << endl;
+            }
+            fin = true;
+        }
+    }
+    return 0;
+}

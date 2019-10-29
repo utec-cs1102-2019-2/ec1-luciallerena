@@ -53,6 +53,7 @@ int main() {
         b =  rand() % (col);
         matrix[a][b] = 8;
     }
+    
     //Mostrar tablero
     /* for(size_t i=0; i<fil; i++){
          for(size_t j=0; j<col; j++){
@@ -76,11 +77,11 @@ int main() {
         cin >> c;
         cout<<endl;
         if(matrix[f][c]!=8) {
-            m[f][c]=matrix[f][c];
+            m[f][c]=rand()%3;
             for (size_t i = 0;i < fil; i++){
                 for (size_t j = 0; j<col; j++) {
                     if(matrix[f][c]==m[i][j]){
-                      cout<<" "<<matrix[i][j];}
+                      cout<<"#\t";}
                     else{cout<<m[i][j]<<"\t";}}
                 cout<<endl;
             }cout<<endl;

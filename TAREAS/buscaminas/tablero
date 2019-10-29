@@ -1,0 +1,81 @@
+#ifndef BUSCAMINAS_TABLERO_H
+#define BUSCAMINAS_TABLERO_H
+
+
+class Tablero {
+  private:
+  int F;
+  bool fin=false;
+  int C;
+  int **matrix;
+
+  public:
+   
+    int getF();
+    int getC();
+  
+    void tablero(int F,int C, int **matrix);
+    void mostrarTablero(int F, int C, int **matrix);
+    void crearMinas(int F,int C);
+    void espacios(int F,int C,int **matrix);
+    
+
+
+};
+
+
+#endif //BUSCAMINAS_TABLERO_H
+
+CPP
+#include "Tablero.h"
+#include <iostream>
+using namespace std;
+
+int Tablero::getF() {
+    return this->F;
+}
+int Tablero::getC(){
+  return this->C;
+}
+
+void Tablero::tablero(int F, int C,int **matrix){
+    matrix = new int *[F];
+    for (size_t i = 0; i < F; i++) {
+        matrix[i] = new int[C];
+        for(size_t j=0;j<C;j++){
+          cout<<" # "<<endl;
+        }cout<<endl; 
+    }
+}
+    
+void Tablero::crearMinas(int F,int C){
+  for (size_t i = 0; i < 9; i++) {
+    int a;int b;
+      a =  rand() % (F);
+       b =  rand() % (C);
+       matrix[a][b] = 8;}
+
+}
+
+void mostrarTablero(int F, int C, int minas, int **matrix, bool fin){
+    for (size_t i = 0; i < F; i++) {
+        for (size_t j = 0; j < C; j++) {
+            if(fin=false){
+               cout<<"#\t";
+            }
+            else{
+              cout<<matrix<< "\t";
+            }
+               
+        }
+        cout<<endl;
+    }
+}
+
+void espacios(int F,int C,int **matrix){
+for (int i = 0; i < F; i++) {
+        matrix[i] = new int[C];
+        for (int j = 0; j < C; j++) {
+            if(matrix[F][C]!=8){
+              matrix[i][j]=rand()%(3);}
+        }}}

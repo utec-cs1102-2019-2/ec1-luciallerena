@@ -1,43 +1,45 @@
-  
 #include "Tablero.h"
 
-
-Tablero::Tablero(size_t filas, size_t columnas) {
-    this->filas = filas;
-    this->columnas = columnas;
-    for(size_t i=0; i<filas; i++){
-        vector<Bloque> filas;
-        for(size_t j=0;j<columnas; j++){
+Tablero::Tablero(int fil, int col) {
+    this->fil = fil;
+    this->col = col;
+    for(size_t i=0; i<fil; i++){
+        vector<Bloque> fil;
+        for(size_t j=0;j<col; j++){
             Bloque *bloque = new Bloque();
-            fila.push_back(*bloque);
+            fil.push_back(*bloque);
         }
-        this->bloques.push_back(filas);
+        this->bloques.push_back(fil);
     }
 }
 
-void Tablero::instalar_minas() {
-    entero a;
-    entero b;
+void Tablero::minas() {
+    int a;
+    int b;
     srand(time(NULL));
     for(size_t i=0; i<10 ; i++){
-        a = rand()%filas;
-        b = rand()%columnas;
-    this->bloques[a][b].es_mina = true;
+        a = rand()%fil;
+        b = rand()%col;
+        this->bloques[a][b].es_mina = true;
     }
 }
 
 void Tablero::mostrar() {
-    cout<<"Cantidad de filas "<<this->filas<<endl;
-    cout<<"Cantidad de column "<<this->columnas<<endl;
-    for(size_t i=0; i<this->filas; i++){
+    cout<<"Cantidad de filas "<<this->fil<<endl;
+    cout<<"Cantidad de columnas "<<this->col<<endl;
 
-        for(size_t j=0; j<this->columnas; j++){
+    for(size_t i=0; i<this->fil; i++){
+
+        for(size_t j=0; j<this->col; j++){
             if(bloques[i][j].es_mina == true){
                 cout<<"*";
+                c++;
             }else{
                 cout<<bloques[i][j].minas;
             }
         }
         cout<<endl;
-    }
+
+    }cout<<endl<<"Hay "<<c<<" minas";
 }
+

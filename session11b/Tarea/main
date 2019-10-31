@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+#include "Comida.h"
+#include "Comida.cpp"
+#include "Mago.h"
+#include "Mago.cpp"
+#include "Estado.h"
+#include "Estado.cpp"
+
+int main() {
+    auto pAlbarrote = new Comida("Albarrote",2);
+    auto pLembas = new Comida("Lembas",3);
+    auto pManzana = new Comida("Manzana",1);
+    auto pMelon = new Comida("Melon",1);
+    auto pHC= new Comida("HoneyCake",5);
+    auto pHongos = new Comida("Hongos",1);
+    auto pTodo = new Comida("Todo",-1);
+    return 0;
+}

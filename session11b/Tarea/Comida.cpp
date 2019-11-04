@@ -1,11 +1,12 @@
 //
 // Created by lucia.llerena on 31/10/2019.
 //
-
+#include <iomanip>
+#include <iostream>
+using namespace std;
 #include "Comida.h"
-
-Comida::Comida(int pNombre, int pCantidad) {
-    Nombre = pNombre;
+Comida::Comida(string pAlimento, int pCantidad) {
+    Alimento = pAlimento;
     Cantidad = pCantidad;
 }
 Comida::~Comida() {
@@ -14,6 +15,6 @@ Comida::~Comida() {
 int Comida::getCantidad() {
     return Cantidad;
 }
-int Comida::getNombre() {
-    return  Nombre;
+string Comida::getAlimento() {
+    return  Alimento;
 }

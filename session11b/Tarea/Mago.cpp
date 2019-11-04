@@ -3,14 +3,16 @@
 //
 
 #include "Mago.h"
-Mago::Mago(int nombre, int alimento, int estado){
-    nombre=nombre;
-    alimento=alimento;
+Mago::Mago(int Alimento, int Cantidad, int estado){
+  
+    Alimento=Alimento;
+    Cantidad=Cantidad;
     estado=estado;
 }
-int Mago::getnombre(){
-    return nombre;
+Mago::~Mago() {}
+int Mago::getAlimento(){
+    return Alimento;
 }
-int Mago::getalimento(){
-    return alimento;
+int Mago::getCantidad(){
+    return Cantidad;
 }

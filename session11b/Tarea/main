@@ -16,6 +16,6 @@ int main() {
     auto pHC= new Comida("HoneyCake",5);
     auto pHongos = new Comida("Hongos",1);
     auto pTodo = new Comida("Todo",-1);
-    
+    void mostrarDatosBasicos(ostream &os,T* &objeto)
     return 0;
 }

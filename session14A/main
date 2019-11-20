@@ -1,0 +1,14 @@
+#include <iostream>
+#include "Carta.h"
+#include "Baraja.h"
+#include "Juego.h"
+#include "Palo.h"
+#include <vector>
+using namespace std;
+
+
+int main() {
+   Carta *c=new Carta();
+
+    return 0;
+}

@@ -1,4 +1,4 @@
-//
+/
 // Created by lucia.llerena on 20/11/2019.
 //
 
@@ -6,12 +6,18 @@
 #define SESSION14A_JUEGO_H
 #include "Baraja.h"
 #include "Carta.h"
+#include <iostream>
+#include <vector>
 
+using namespace std;
 class Juego {
-Baraja *b;
-vector<Carta>carta;
 public:
+    Baraja *b;
+    vector<Carta>cartas;
+    Juego();
     void start();
+    void mostrar();
+    bool esPoker();
 };
 
 

@@ -1,10 +1,13 @@
 
+//
+// Created by lucia.llerena on 20/11/2019.
+//
+
 #include "Carta.h"
-void Carta::carta() {
-    for (int i=0;i<=13;i++){
-        num=num+1;
-        cin>>num;
-    }
+Carta::Carta(int num,string palo) {
+    this->num=num;
+    this->palo=palo;
 }
-Carta::~Carta() {}
-Carta::Carta(){
+void Carta::mostrar(){
+    cout<<num<<" "<<palo<<endl;
+}

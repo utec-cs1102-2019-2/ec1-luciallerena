@@ -3,17 +3,19 @@
 //
 #ifndef SESSION14A_PALO_H
 #define SESSION14A_PALO_H
+#include "Carta.h"
 #include <iostream>
 #include <vector>
+
 using namespace std;
-#include "Carta.h"
+
 class Palo {
-string nombre;
-string color;
-vector<Carta>cartas;
-Palo();
-~Palo();
-void palos(string nombre,string color);
+public:
+    string nombre;
+    string color;
+    vector<Carta> cartas;
+    Palo(string nombre, string color);
+
 };
 
 

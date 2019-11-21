@@ -1,16 +1,17 @@
+//
+// Created by lucia.llerena on 20/11/2019.
+//
+
 #ifndef SESSION14A_CARTA_H
 #define SESSION14A_CARTA_H
 #include "Palo.h"
-
-class Carta {
-int num;
-palo *palo;
-carta (palo *p);
-
+#include <iostream>
+class Carta{
 public:
-    Carta();
-    ~Carta();
-    void carta();
+    int num;
+    string palo;
+    Carta(int num,string palo);
+    void mostrar();
 };
 
 
